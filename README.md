@@ -7,6 +7,7 @@
 Current version: 1.1.0
 
 ## Usage
+
 To design the junction structure:<br>
 1)Select the desired junction angle, width of GNR leads and three additional parameters called distance, shift and chirality.<br>
 2)Atoms can be removed from the initial scattering region by entering the corresponding atom number(s) and then pressing the 'Remove atoms' button<br>
@@ -16,13 +17,14 @@ The electronic structure and transport properties are calculated:<br>
 2)Local density of states, local current map and wavefunctions in the lead channels are displayed for a selected single energy value defined in terms of the tight-binding hopping integral t<br>
 
 ## License
+
 MIT. The terms of the license can be found in the LICENSE file.
 
-
-
 ## Contact
+
 kristians.cernevics@epfl.ch
 
+## Docker
 
-
-
+docker build -t tools_tbeta .
+docker run -p 80:80 tools_tbeta
