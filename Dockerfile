@@ -1,4 +1,3 @@
-# Start from an official slim Python 3.6 image
 FROM python:3.6.15-slim
 
 # Install system dependencies
@@ -9,12 +8,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Create working directory
 WORKDIR /app
 
-# Copy app files
-COPY . /app/
-
 # Install Python dependencies
+COPY requirements.txt /app
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
+
+# Copy app files
+COPY . /app/
 
 EXPOSE 80
 
